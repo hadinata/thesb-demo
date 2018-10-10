@@ -1,0 +1,597 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/simple.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+			// window.addEventListener("mousedown", handleClick, false);
+			// window.addEventListener("contextmenu", function(e) { e.preventDefault(); }, false);
+
+			// function handleClick(e) {
+			// 	e.preventDefault();
+			// 	if(e.button === 0) Reveal.next(); 
+			// 	if(e.button === 2) Reveal.prev(); 
+			// }
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Thesis A Seminar</h1>
+					<p>Clinton Hadinata</p>
+				</section>
+				<section>
+					<h3>In this presentation I will go over:</h3>
+					<br>
+					<ul>
+						<li class="fragment">What my topic is</li>
+						<li class="fragment">How this relates to the research goals of the Giannoulatou Lab and VCCRI</li>
+						<li class="fragment">The problem to be solved</li>
+						<li class="fragment">Literature review of existing solutions</li>
+						<li class="fragment">The aim of this thesis</li>
+						<li class="fragment">My proposed solution to solve the problem</li>
+						<li class="fragment">Plans and update on current progress</li>
+					</ul>
+				</section>
+				<section>
+					<h2>The Topic</h2>
+					<!-- <blockquote>
+						Using deep neural networks for accurate variant calling from whole genome sequencing data
+					</blockquote> -->
+					<p>Using <span class="fragment highlight-red">deep neural networks</span> for accurate <span class="fragment highlight-red">variant calling</span> from whole genome sequencing data</p>
+				</section>
+				<section>
+					<section>
+						<ul class="greyed">
+							<li>What my topic is</li>
+							<li><b>How this relates to the research goals of the Giannoulatou Lab and VCCRI</b></li>
+							<li>The problem to be solved</li>
+							<li>Literature review of existing solutions</li>
+							<li>The aim of this thesis</li>
+							<li>My proposed solution to solve the problem</li>
+							<li>Plans and update on current progress</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Genetic Mutation Discovery</h2>
+						<p class="fragment">One of the goals of the Giannoulatou Lab and VCCRI is to discover genetic mutations in human patients that are potentially linked to diseases</p>
+					</section>
+					<section>
+						<p>Variant Calling is the process of identifying variants from genome sequence data</p>
+						<ul>
+							<li class="fragment">Single Nucleotide Polymorphisms (SNP)</li>
+							<li class="fragment">Insertion/Deletions (Indel)</li>
+							<div class="small-image fragment">
+									<img src="snpindel1.png">
+							</div>
+						</ul>
+						<!-- <div class="image fragment">
+							<img src="snpindel1.png">
+						</div> -->
+					</section>
+					<section>
+						<p>Steps undertaken:</p>
+						<ol>
+							<li class="fragment">Genome sequencing of the sample/s of interest</li>
+							<li class="fragment">Variant calling of the above sequenced data to identify variants (SNP/indel)</li>
+							<li class="fragment">Analysis of variants to identify potential disease-causing mutations</li>					
+						</ol>
+					</section>
+				</section>
+				<section>
+					<section>
+						<ul class="greyed">
+							<li>What my topic is</li>
+							<li>How this relates to the research goals of the Giannoulatou Lab and VCCRI</li>
+							<li><b>The problem to be solved</b></li>
+							<li>Literature review of existing solutions</li>
+							<li>The aim of this thesis</li>
+							<li>My proposed solution to solve the problem</li>
+							<li>Plans and update on current progress</li>
+						</ul>
+					</section>
+					<section>
+						<h2>The Problem</h2>
+					<!-- </section>
+					<section> -->
+						<p class="fragment">Genome sequencing methods (Step 1) are not perfect.</p>
+						<ul>
+							<li class="fragment">Next Generation Sequencing methods are the most common and cost-effective sequencing methods used for <i>whole genome sequencing (WGS)</i> today.</li>
+							<li class="fragment">Involves randomly digesting the genome into small fragments (short reads) that get sequenced.</li>
+							<!-- <div class="footer">Nielsen, R., Paul, J. S., Albrechtsen, A., & Song, Y. S. (2011). Genotype and SNP calling from next-generation sequencing data. Nature Reviews. Genetics, 12(6), 443–451. http://doi.org/10.1038/nrg2986</div> -->
+						</ul>
+					</section>
+					<section>
+						<ul>
+							<li>However, reads obtained by NGS methods can have high error rates, due to factors such as base-calling and alignment errors.</li>
+							<li class="fragment">This poses a challenge for variant callers (step 2) that would have to differentiate between actual variation vs machine artifacts</li>
+							<!-- <div class="footer">Nielsen, R., Paul, J. S., Albrechtsen, A., & Song, Y. S. (2011). Genotype and SNP calling from next-generation sequencing data. Nature Reviews. Genetics, 12(6), 443–451. http://doi.org/10.1038/nrg2986</div> -->
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Existing Variant Caller Solutions</h2>
+					</section>
+					<section>
+						<ul class="greyed">
+							<li>What my topic is</li>
+							<li>How this relates to the research goals of the Giannoulatou Lab and VCCRI</li>
+							<li>The problem to be solved</li>
+							<b><li>Literature review of existing solutions</li></b>
+							<li>The aim of this thesis</li>
+							<li>My proposed solution to solve the problem</li>
+							<li>Plans and update on current progress</li>
+						</ul>
+					</section>
+					<section>
+						<h2>GATK</h2>
+						<p>Genome Analysis Toolkit</p>
+						<ul>
+							<li class="fragment">A software platform utilising the MapReduce programming model to aid in the development of analysis tools for NGS data.</li>
+							<li class="fragment">First published in 2010 by McKenna et al. - <i>The Genome Analysis Toolkit: A MapReduce framework for analyzing next-generation DNA sequencing data</i></li>
+						</ul>
+					</section>
+					<!-- <section>
+						<ul>
+							<li class="fragment">Uses the Bayesian probability approach</li>
+							<li class="fragment">'Relative Probability':</li>
+							<ul>
+								<li class="fragment">P(genotype|data) ∝ P(data|genotype)P(genotype)</li>
+							<ul>
+							<li class="fragment">Priors obtained from a reference sequence / SNP databases</li>
+							<li class="fragment">Gaussian likelihood</li>
+							<li class="fragment">Typically, the genotype with the highest posterior gets chosen (Maximum a posteriori)</li>
+						</ul>
+					</section> -->
+					<section>
+						<h3>Literature Review</h3>
+						<!-- <p><b>A framework for variation discovery and genotyping using next-generation DNA sequencing data</b></p>
+						<p>De Pristo <i>et al.</i> 2011</p> -->
+						<p>
+							DePristo, M. <i>et al.</i> <b>A framework for variation discovery and genotyping using next-generation DNA sequencing data.</b> <i>Nature Genetics</i> volume 43, pages 491–498 (2011)
+						</p>
+						<p class="fragment">De Pristo et al. presented a framework for simultaneous genotype variation discovery among multiple samples.</p>
+					</section>
+					<section>
+						<h3>GATK Algorithm</h3>
+						<ul>
+							<li class="fragment">
+								Phase 1: Transformation of raw reads to a generic representation in order to remove platform-dependent biases through pre-processing of NGS data. 
+								<!-- <ul>
+									<li class="fragment">Mapping algorithms used for alignment to reference genome</li>
+									<li class="fragment">Molecular duplicates removed, and then alignment further refined with local realignment</li>
+								</ul> -->
+							</li>
+							<li class="fragment">Phase 2: Alternate allele discovery (SNPs and short indels) using statistical evidence from a Bayesian probabilistic model</li>
+							<li class="fragment">Phase 3: Further refinement of variant calls through integration of external data.</li>
+						</ul>
+					</section>
+					<section>
+						<div class="image">
+							<img src="ng.806-F1.jpg">
+						</div>
+					</section>
+					<section>
+						<h2>Platypus</h2>
+						<!-- <ul> -->
+						<p class="fragment">A variant caller that utilises an algorithm combining a haplotype-based, multi-sample variant caller with local sequence assembly in a Bayesian statistical framework</p>
+						<!-- </ul> -->
+					</section>
+					<section>
+						<h3>Literature Review</h3>
+						<p>Rimmer, A. <i>et al.</i> <b>Integrating mapping-, assembly- and haplotype-based approaches for calling variants in clinical sequencing applications.</b> <i>Nature Genetics</i> volume 46, pages 912–918 (2014)</p>
+					</section>
+					<section>
+						<h3>Platypus Algorithm</h3>
+						<ol>
+							<li class="fragment">Combines mapped read alignments with local reference-free sequence assembly to generate a set of candidate variants</li>
+							<li class="fragment">Candidate haplotypes formed from candidate variants</li>
+							<!-- <li class="fragment">Estimation of haplotype frequencies under diploid segregation model</li> -->
+							<li class="fragment">Likelihoods of each of the reads given each of the candidate haplotypes is computed. Expectation-maximization (EM) algorithm estimates population haplotype frequencies from these likelihoods</li>
+							<li class="fragment">Above haplotype frequencies used as priors for calling haplotypes</li>
+							<li class="fragment">Variant genotype calls/likelihoods generated, marginalising over individuals</li>
+							<li class="fragment">Filtering (on quality, bias, posterior) to remove calls resulting from further artifacts, before final calls generated</li>
+						</ol>
+					</section>
+					<section>
+						<h3>Platypus Algorithm</h3>
+						<div class="image">
+							<img src="ng.3036-F1.jpg">
+						</div>
+						<!-- <ul>
+							<li class="fragment">Generates set of candidate variants (from read alignments, assembly, external sources)</li>
+							<li class="fragment"></li>
+						</ul> -->
+					</section>
+					<section>
+						<p>Results from 75–86 × 100-bp paired-end Illumina HiSeq 2000 reads from parent-offspring trio (NA12878, NA12891 and NA12892)</p>
+						<div class="eighty">
+							<img src="platypus-table1.png">
+						</div>
+					</section>
+					<section>
+						<h3>Compared with GATK</h3>
+						<ul>
+							<li class="fragment">No preprocessing of raw reads data, utilises the raw data directly</li>
+							<li class="fragment">This makes the variant caller perform <b>an order of magnitude faster</b> than GATK and other methods.</li>
+							<li class="fragment">Utilises reference-free sequence assembly algorithms, combined with mapped read alignments</li>
+							<li class="fragment">Results in higher sensitivity and specificity, calling a <b>higher number of larger indels</b></li>
+						</ul>
+					</section>
+					<section>
+						<p>Platypus calls a higher number of large indels</p>
+						<div class="image">
+							<img src="ng.3036-F2.jpg">
+						</div>
+						<!-- <ul>
+							<li class="fragment">Generates set of candidate variants (from read alignments, assembly, external sources)</li>
+							<li class="fragment"></li>
+						</ul> -->
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>DeepVariant</h2>
+						<p>Takes a <span class="fragment highlight-red">machine-learning</span> approach to variant calling, using a deep convolutional neural network to learn and model the <span class="fragment highlight-red">statistical relationships</span> between reads and genotype calls</p>
+					</section>
+					<section>
+						<h3>Literature Review</h3>
+						<p>Poplin, R. <i>et al.</i> <b>Creating a universal SNP and small indel variant caller with deep neural networks.</b> <i>BioRxiv</i> (2017)</p>
+					</section>
+					<section>
+						<h3>DeepVariant Algorithm</h3>
+						<ol>
+							<li class="fragment">Align NGS reads to a reference genome</li>
+							<li class="fragment">Encode read and reference data into an RGB encoding to create a pileup image at every variant position</li>
+							<li class="fragment">Pipe these images through the pre-trained convolutional neural network to calculate genotype likelihoods at each position</li>
+						</ol>
+					</section>
+					<section>
+						<div class="image">
+							<img src="image3.png">
+						</div>
+					</section>
+					<section>
+						<h3>Pileup Images</h3>
+						<div class="image">
+							<img src="image2.png">
+						</div>
+					</section>
+					<section>
+						<h3>DeepVariant Training</h3>
+						<ul>
+							<li class="fragment">The DeepVariant CNN has been trained using Truth variants from Genome in a Bottle</li>
+							<li class="fragment">The CNN input layer consists of labeled training pairs - pile-up images of each read as input, truth genotypes as labels.</li>
+							<li class="fragment">This is attached to the ConvNetJuly2015v2 CNN</li>
+							<li class="fragment">Fully connected layer with final output layer being a three-class softmax layer (classes for heterozygous, homozygous or reference genotype calls)</li>
+							<li class="fragment">Stochastic gradient descent performed to adjust weights until convergence in accuracy</li>
+							<li class="fragment">Final weights saved to be used for variant calling</li>
+						</ul>
+					</section>
+					<section>
+						<div class="image">
+							<img src="conv1.png">
+						</div>
+					</section>
+					<section>
+						<h3>Results</h3>
+					</section>
+					<section>
+						<h3>PPV vs Sensitivity for SNPs and Indels (NA12878)</h3>
+						<div class="image">
+							<img src="imageA.png">
+						</div>
+					</section>
+					<section>
+						<h3>Other Metrics - Consistency</h3>
+						<div class="image">
+							<img src="imageB.png">
+						</div>
+					</section>
+					<section>
+						<h3>DeepVariant better calibrated than GATK</h3>
+						<div class="image">
+							<img src="imageC.png">
+						</div>
+					</section>
+					<section>
+						<h3>Compared with other Variant Callers on whole genome sample NA24385</h3>
+						<div class="image">
+							<img src="imageF1.png">
+						</div>
+					</section>					
+					<section>
+						<h3>Better than GATK and Platypus?</h3>
+						<ul>
+							<li class="fragment">Above results suggests better performance than others, especially with indel calls</li>
+							<li class="fragment">However, DeepVariant is very computationally intensive</li>
+							<li class="fragment">Thus, it is a lot more costly to run, and takes a lot longer to run ($15 for 4-5 hours on gcloud per whole genome)</li>
+							<li class="fragment">Does not perform simulatneous variant co-calling of multiple samples</li>
+							<li class="fragment">Current Google implemented pipeline requires dependencies for Ubuntu</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<ul class="greyed">
+							<li>What my topic is</li>
+							<li>How this relates to the research goals of the Giannoulatou Lab and VCCRI</li>
+							<li>The problem to be solved</li>
+							<li>Literature review of existing solutions</li>
+							<b><li>The aim of this thesis</li></b>
+							<li>My proposed solution to solve the problem</li>
+							<li>Plans and update on current progress</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Aims</h2>
+					</section>
+					<section>
+						<p>The overall aim is to improve genetic mutation discovery in human patients through the use / improvement of variant callers.</p>
+					</section>
+					<section>
+						<p>DeepVariant presents us with the possibility of making new human genetic mutation discoveries.</p> 
+						<p class="fragment">The aim is to use, investigate the viability of, and improve DeepVariant in order to improve genetic mutation discovery, withinin the context of VCCRI's data, current methods, and research aims.</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<ul class="greyed">
+							<li>What my topic is</li>
+							<li>How this relates to the research goals of the Giannoulatou Lab and VCCRI</li>
+							<li>The problem to be solved</li>
+							<li>Literature review of existing solutions</li>
+							<li>The aim of this thesis</li>
+							<b><li>My proposed solution to solve the problem</li></b>
+							<li>Plans and update on current progress</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Proposed Solution</h2>
+					<!-- </section>
+					<section> -->
+						<ol>
+							<li>Conduct research on Genome sequencing and DeepVariant and other variant callers</li>
+							<li class="fragment">Create a pipeline to use DeepVariant with our own genomic data</li>
+							<li class="fragment">Perform analysis on the output of both DeepVariant and Platypus to answer:</li>
+							<ul>
+								<li class="fragment">Is DeepVariant more accurate?</li>
+								<li class="fragment">What are the qualitative differences between variants called/not by each method?</li>
+								<li class="fragment">Does co-calling of multiple samples make a difference?</li>
+							</ul>
+							<li class="fragment">Improve on the DeepVariant model through the inclusion of trio (father-mother-child) data, potentially using the above analysis to inform this model improvement process</li>
+						</ol>
+					</section>
+				</section>
+				<section>
+					<section>
+						<ul class="greyed">
+							<li>What my topic is</li>
+							<li>How this relates to the research goals of the Giannoulatou Lab and VCCRI</li>
+							<li>The problem to be solved</li>
+							<li>Literature review of existing solutions</li>
+							<li>The aim of this thesis</li>
+							<li>My proposed solution to solve the problem</li>
+							<b><li>Plans and update on current progress</li></b>
+						</ul>
+					</section>
+					<section><h2>Plan</h2></section>
+					<!-- <section>
+						<ul>
+							<li>Week 1-4: Research on Genome Sequencing, Variant callers and DeepVariant</li>
+							<li>Week 2-3: Run DeepVariant with VCCRI patient genomic data</li>
+							<li>Week 4-5: Create a pipeline to post-process DeepVariant output</li>
+							<li>Week 6-7: Conduct analysis and comparison with DeepVariant</li>
+							<li>Week 8-11: Further understanding of the DeepVariant codebase and model</li>
+							<li>Week 10-13: Investigate methods to integrate trio data / other parameters</li>
+							<li>Winter Break: Begin development of updated model</li>
+							<li>Week 1-4: Training and Testing</li>
+							<li>Week 5-8: Finalising thesis</li>
+						</ul>
+					</section> -->
+					<section>
+						<h3>Gantt Chart</h3>
+						<div class="image">
+							<img src="thesisA-gantt2.png">
+						</div>
+					</section>
+				</section>
+				<section>
+					<section><h2>Current Progress</h2></section>
+					<section>
+						<p>Research of DeepVariant and GATK and Platypus variant callers completed</p>
+					</section>
+					<section>
+						<p>Pipeline to run DeepVariant completed - composed of two parts:</p>
+						<ol>
+							<li class="fragment">DeepVariant output VCF generation utlising Google Cloud Genomics Pipeline API</li>
+							<li class="fragment">Post-processing of output VCF to enable comparison with existing Platypus-generated outputs (merging, normalisation, decomposition, annotation)</li>
+						</ol>
+					</section>
+					<section>
+						<p>DeepVariant has been run on a family set of four samples - parent-offspring trio, plus an uncle. Offspring is a patient with congenital heart disease.</p>
+					</section>
+					<section>
+						<p>Currently conducting analysis of the results generated by these two variant callers</p>
+						<ul>
+							<li>Proportions of Platypus only vs DeepVariant only calls</li>
+							<li>Distributions of Read Depths, Variant Allele Frequency, Genotype Quality</li>
+							<li>Proportions of calls in exogenic/endogenic positions</li>
+							<li>Genotype population distributions</li>
+							<li>Mendelian error validation</li>
+						</ul>
+					</section>
+					<section>
+						<p>Initial results suggest possibility of high false positive rate of Platypus</p>
+						<div class="eighty">
+							<img src="venn1.png">
+						</div>
+					</section>
+				</section>
+				<section>
+					<section><h2>Potential Challenges Ahead</h2></section>
+					<section>
+							<ul>
+								<!-- <li>Viability of DeepVariant use given the heavy resource requirements</li> -->
+								<li class="fragment">Drawing the correct conclusions from evaluation of analysis</li>
+								<li class="fragment">The most effective way to integrate trio data into the learning model</li>
+								<ul>
+									<li class="fragment">Would stacking parent image be sufficient?</li>
+									<li class="fragment">Could any relationships be explicitly modeled?</li>
+									<li class="fragment">Could any other parameters be included?</li>
+								</ul>
+								<li class="fragment">How to train with large datasets efficiently?</li>
+								<li class="fragment">Parameter selection</li>
+							</ul>
+					</section>
+					<section>
+						<p>Further research, experimentation, and assistance from fellow researchers at VCCRI</p>
+					</section>
+				</section>
+				<section>
+					<h3>References</h3>
+					<div class="references">
+						<p>DePristo, M. <i>et al.</i> A framework for variation discovery and genotyping using next-generation DNA sequencing data. <i>Nature Genetics</i> <b>43</b>, 491–498 (2011).</p>
+						<p>McKenna, A. <i>et al.</i> The Genome Analysis Toolkit: A MapReduce framework for analyzing next-generation DNA sequencing data. <i>Genome Res.</i> <b>20</b>, 1297-1303 (2010).</p>
+						<p>Nielsen, R., Paul, J. S., Albrechtsen, A. &amp; Song, Y. S. Genotype and SNP calling from next-generation sequencing data. <i>Nat. Rev. Genet.</i> <b>12</b>,​ 443–451 (2011).</p>
+						<p>Poplin, R. <i>et al.</i> Creating a universal SNP and small indel variant caller with deep neural networks. <i>BioRxiv</i> (2017)</p>
+						<p>Rimmer, A. <i>et al.</i> Integrating mapping-, assembly- and haplotype-based approaches for calling variants in clinical sequencing applications. <i>Nature Genetics</i> <b>46</b>, 912–918 (2014).</p>
+					</div>
+				</section>
+				<section>
+					<h2>Thank you</h2>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+			Reveal.configure({ pdfMaxPagesPerSlide: 1 });
+		</script>
+
+
+
+
+<style type="text/css">
+    /* 1. Style header/footer <div> so they are positioned as desired. */
+    #header-left {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+    }
+    #header-right {
+        position: absolute;
+        top: 0%;
+        right: 0%;
+	}
+	#header-left img {
+		max-height: 40px;
+		padding: 20px;
+	}
+    .footer {
+        position: absolute;
+        bottom: 0%;
+        /* left: 0%; */
+	}
+	.image img{
+		/* max-height: -webkit-fill-available; */
+		max-height: 480px;
+		max-width: 800px;
+	}
+	.eighty img{
+		/* max-height: -webkit-fill-available; */
+		max-height: 450px;
+		max-width: 800px;
+	}
+	.small-image img{
+		/* max-height: -webkit-fill-available; */
+		max-height: 450px;
+		max-width: 450px;
+	}
+	.spaced {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	.references {
+		/* max-width: 90%; */
+		/* margin: 0 auto !important; */
+		font-size: 0.7em !important;
+		text-align: left;
+	}
+	li {
+		padding-top: 3px !important;
+		padding-bottom: 3px !important;
+	}
+	.greyed {
+		color: rgb(0,0,0,0.4);
+	}
+	.greyed b {
+		color: rgb(177,17,22,1);
+	}
+	ul, ol, p {
+		max-width: 90%;
+	}
+	p {
+		padding-top: 10px !important;
+		padding-bottom: 10px !important;
+		margin: 0 auto !important;
+	}
+</style>
+
+<!-- 2. Create hidden header/footer <div> -->
+<div id="hidden" style="display:none;">
+    <div id="header">
+        <!-- <div id="header-left">HEADER-LEFT</div> -->
+        <div id="header-left">
+			<img src="vccri-logo.png">
+		</div>
+        <!-- <div id="footer-left">FOOTER-LEFT</div> -->
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+    // 3. On Reveal.js ready event, copy header/footer <div> into each `.slide-background` <div>
+    var header = $('#header').html();
+    if ( window.location.search.match( /print-pdf/gi ) ) {
+        Reveal.addEventListener( 'ready', function( event ) {
+            $('.slide-background').append(header);
+        });
+    }
+    else {
+        $('div.reveal').append(header);
+   }
+</script>
+
+	</body>
+</html>
