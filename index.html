@@ -19,21 +19,21 @@
 			link.type = 'text/css';
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
-			// window.addEventListener("mousedown", handleClick, false);
-			// window.addEventListener("contextmenu", function(e) { e.preventDefault(); }, false);
+			window.addEventListener("mousedown", handleClick, false);
+			window.addEventListener("contextmenu", function(e) { e.preventDefault(); }, false);
 
-			// function handleClick(e) {
-			// 	e.preventDefault();
-			// 	if(e.button === 0) Reveal.next(); 
-			// 	if(e.button === 2) Reveal.prev(); 
-			// }
+			function handleClick(e) {
+				e.preventDefault();
+				if(e.button === 0) Reveal.next(); 
+				if(e.button === 2) Reveal.prev(); 
+			}
 		</script>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<h1>Thesis A Seminar</h1>
+					<h1>Thesis B Demo</h1>
 					<p>Clinton Hadinata</p>
 				</section>
 				<section>
@@ -43,10 +43,11 @@
 						<li class="fragment">What my topic is</li>
 						<li class="fragment">How this relates to the research goals of the Giannoulatou Lab and VCCRI</li>
 						<li class="fragment">The problem to be solved</li>
-						<li class="fragment">Literature review of existing solutions</li>
+						<li class="fragment">An overview of existing solutions</li>
 						<li class="fragment">The aim of this thesis</li>
-						<li class="fragment">My proposed solution to solve the problem</li>
-						<li class="fragment">Plans and update on current progress</li>
+						<li class="fragment">How I achieved thesis aims and my solution to the problem</li>
+						<li class="fragment">Demo of my solution</li>
+						<li class="fragment">Analysis and final results</li>
 					</ul>
 				</section>
 				<section>
@@ -62,10 +63,11 @@
 							<li>What my topic is</li>
 							<li><b>How this relates to the research goals of the Giannoulatou Lab and VCCRI</b></li>
 							<li>The problem to be solved</li>
-							<li>Literature review of existing solutions</li>
+							<li>An overview of existing solutions</li>
 							<li>The aim of this thesis</li>
-							<li>My proposed solution to solve the problem</li>
-							<li>Plans and update on current progress</li>
+							<li>How I achieved thesis aims and my solution to the problem</li>
+							<li>Demo of my solution</li>
+							<li>Analysis and final results</li>
 						</ul>
 					</section>
 					<section>
@@ -100,10 +102,11 @@
 							<li>What my topic is</li>
 							<li>How this relates to the research goals of the Giannoulatou Lab and VCCRI</li>
 							<li><b>The problem to be solved</b></li>
-							<li>Literature review of existing solutions</li>
+							<li>An overview of existing solutions</li>
 							<li>The aim of this thesis</li>
-							<li>My proposed solution to solve the problem</li>
-							<li>Plans and update on current progress</li>
+							<li>How I achieved thesis aims and my solution to the problem</li>
+							<li>Demo of my solution</li>
+							<li>Analysis and final results</li>
 						</ul>
 					</section>
 					<section>
@@ -134,10 +137,11 @@
 							<li>What my topic is</li>
 							<li>How this relates to the research goals of the Giannoulatou Lab and VCCRI</li>
 							<li>The problem to be solved</li>
-							<b><li>Literature review of existing solutions</li></b>
+							<b><li>An overview of existing solutions</li></b>
 							<li>The aim of this thesis</li>
-							<li>My proposed solution to solve the problem</li>
-							<li>Plans and update on current progress</li>
+							<li>How I achieved thesis aims and my solution to the problem</li>
+							<li>Demo of my solution</li>
+							<li>Analysis and final results</li>
 						</ul>
 					</section>
 					<section>
@@ -160,29 +164,29 @@
 							<li class="fragment">Typically, the genotype with the highest posterior gets chosen (Maximum a posteriori)</li>
 						</ul>
 					</section> -->
-					<section>
-						<h3>Literature Review</h3>
+					<!-- <section>
+						<h3>Literature Review</h3> -->
 						<!-- <p><b>A framework for variation discovery and genotyping using next-generation DNA sequencing data</b></p>
 						<p>De Pristo <i>et al.</i> 2011</p> -->
-						<p>
+						<!-- <p>
 							DePristo, M. <i>et al.</i> <b>A framework for variation discovery and genotyping using next-generation DNA sequencing data.</b> <i>Nature Genetics</i> volume 43, pages 491–498 (2011)
 						</p>
 						<p class="fragment">De Pristo et al. presented a framework for simultaneous genotype variation discovery among multiple samples.</p>
-					</section>
-					<section>
+					</section> -->
+					<!-- <section>
 						<h3>GATK Algorithm</h3>
 						<ul>
 							<li class="fragment">
-								Phase 1: Transformation of raw reads to a generic representation in order to remove platform-dependent biases through pre-processing of NGS data. 
+								Phase 1: Transformation of raw reads to a generic representation in order to remove platform-dependent biases through pre-processing of NGS data.  -->
 								<!-- <ul>
 									<li class="fragment">Mapping algorithms used for alignment to reference genome</li>
 									<li class="fragment">Molecular duplicates removed, and then alignment further refined with local realignment</li>
 								</ul> -->
-							</li>
+							<!-- </li>
 							<li class="fragment">Phase 2: Alternate allele discovery (SNPs and short indels) using statistical evidence from a Bayesian probabilistic model</li>
 							<li class="fragment">Phase 3: Further refinement of variant calls through integration of external data.</li>
 						</ul>
-					</section>
+					</section> -->
 					<section>
 						<div class="image">
 							<img src="ng.806-F1.jpg">
@@ -194,22 +198,22 @@
 						<p class="fragment">A variant caller that utilises an algorithm combining a haplotype-based, multi-sample variant caller with local sequence assembly in a Bayesian statistical framework</p>
 						<!-- </ul> -->
 					</section>
-					<section>
+					<!-- <section>
 						<h3>Literature Review</h3>
 						<p>Rimmer, A. <i>et al.</i> <b>Integrating mapping-, assembly- and haplotype-based approaches for calling variants in clinical sequencing applications.</b> <i>Nature Genetics</i> volume 46, pages 912–918 (2014)</p>
-					</section>
-					<section>
+					</section> -->
+					<!-- <section>
 						<h3>Platypus Algorithm</h3>
 						<ol>
 							<li class="fragment">Combines mapped read alignments with local reference-free sequence assembly to generate a set of candidate variants</li>
-							<li class="fragment">Candidate haplotypes formed from candidate variants</li>
+							<li class="fragment">Candidate haplotypes formed from candidate variants</li> -->
 							<!-- <li class="fragment">Estimation of haplotype frequencies under diploid segregation model</li> -->
-							<li class="fragment">Likelihoods of each of the reads given each of the candidate haplotypes is computed. Expectation-maximization (EM) algorithm estimates population haplotype frequencies from these likelihoods</li>
+							<!-- <li class="fragment">Likelihoods of each of the reads given each of the candidate haplotypes is computed. Expectation-maximization (EM) algorithm estimates population haplotype frequencies from these likelihoods</li>
 							<li class="fragment">Above haplotype frequencies used as priors for calling haplotypes</li>
 							<li class="fragment">Variant genotype calls/likelihoods generated, marginalising over individuals</li>
 							<li class="fragment">Filtering (on quality, bias, posterior) to remove calls resulting from further artifacts, before final calls generated</li>
 						</ol>
-					</section>
+					</section> -->
 					<section>
 						<h3>Platypus Algorithm</h3>
 						<div class="image">
@@ -300,18 +304,6 @@
 						</div>
 					</section>
 					<section>
-						<h3>Other Metrics - Consistency</h3>
-						<div class="image">
-							<img src="imageB.png">
-						</div>
-					</section>
-					<section>
-						<h3>DeepVariant better calibrated than GATK</h3>
-						<div class="image">
-							<img src="imageC.png">
-						</div>
-					</section>
-					<section>
 						<h3>Compared with other Variant Callers on whole genome sample NA24385</h3>
 						<div class="image">
 							<img src="imageF1.png">
@@ -323,8 +315,7 @@
 							<li class="fragment">Above results suggests better performance than others, especially with indel calls</li>
 							<li class="fragment">However, DeepVariant is very computationally intensive</li>
 							<li class="fragment">Thus, it is a lot more costly to run, and takes a lot longer to run ($15 for 4-5 hours on gcloud per whole genome)</li>
-							<li class="fragment">Does not perform simulatneous variant co-calling of multiple samples</li>
-							<li class="fragment">Current Google implemented pipeline requires dependencies for Ubuntu</li>
+							<li class="fragment">Does not perform simultaneous variant co-calling of multiple samples</li>
 						</ul>
 					</section>
 				</section>
@@ -334,10 +325,11 @@
 							<li>What my topic is</li>
 							<li>How this relates to the research goals of the Giannoulatou Lab and VCCRI</li>
 							<li>The problem to be solved</li>
-							<li>Literature review of existing solutions</li>
+							<li>An overview of existing solutions</li>
 							<b><li>The aim of this thesis</li></b>
-							<li>My proposed solution to solve the problem</li>
-							<li>Plans and update on current progress</li>
+							<li>How I achieved thesis aims and my solution to the problem</li>
+							<li>Demo of my solution</li>
+							<li>Analysis and final results</li>
 						</ul>
 					</section>
 					<section>
@@ -345,10 +337,16 @@
 					</section>
 					<section>
 						<p>The overall aim is to improve genetic mutation discovery in human patients through the use / improvement of variant callers.</p>
+						<p>DeepVariant presents us with the possibility of making new human genetic mutation discoveries.</p> 
 					</section>
 					<section>
-						<p>DeepVariant presents us with the possibility of making new human genetic mutation discoveries.</p> 
-						<p class="fragment">The aim is to use, investigate the viability of, and improve DeepVariant in order to improve genetic mutation discovery, withinin the context of VCCRI's data, current methods, and research aims.</p>
+						<p class="fragment">The aim of my thesis is thus to:</p>
+						<ul>
+							<li class="fragment">Use DeepVariant</li>
+							<li class="fragment">Investigate its viability</li>
+							<li class="fragment">Improve on it</li>
+						</ul>
+						<p class="fragment">in order to improve genetic mutation discovery, within the context of VCCRI's data, current methods, and research aims.</p>
 					</section>
 				</section>
 				<section>
@@ -357,27 +355,140 @@
 							<li>What my topic is</li>
 							<li>How this relates to the research goals of the Giannoulatou Lab and VCCRI</li>
 							<li>The problem to be solved</li>
-							<li>Literature review of existing solutions</li>
-							<li>The aim of this thesis</li>
-							<b><li>My proposed solution to solve the problem</li></b>
-							<li>Plans and update on current progress</li>
+							<li>An overview of existing solutions</li>
+							<li>The aim of this thesis</li></b>
+							<b><li>How I achieved thesis aims and my solution to the problem</li></b>
+							<li>Demo of my solution</li>
+							<li>Analysis and final results</li>
 						</ul>
 					</section>
 					<section>
-						<h2>Proposed Solution</h2>
-					<!-- </section>
-					<section> -->
+						<h2>1. Comparison between DeepVariant and Platypus</h2>
+					</section>
+					<section>
+						<p>First goal: to successfully run DeepVariant on VCCRI's own sequenced datasets and compare with Platypus</p>
+						<br>
 						<ol>
-							<li>Conduct research on Genome sequencing and DeepVariant and other variant callers</li>
-							<li class="fragment">Create a pipeline to use DeepVariant with our own genomic data</li>
-							<li class="fragment">Perform analysis on the output of both DeepVariant and Platypus to answer:</li>
-							<ul>
-								<li class="fragment">Is DeepVariant more accurate?</li>
-								<li class="fragment">What are the qualitative differences between variants called/not by each method?</li>
-								<li class="fragment">Does co-calling of multiple samples make a difference?</li>
-							</ul>
-							<li class="fragment">Improve on the DeepVariant model through the inclusion of trio (father-mother-child) data, potentially using the above analysis to inform this model improvement process</li>
+							<!-- <li>Conduct research on Genome sequencing and DeepVariant and other variant callers</li> -->
+							<li class="fragment">Ran DeepVariant on our CHD trio to generate individual VCF outputs (this was done firstly on Google Cloud, and later on on AWS)</li>
+							<li class="fragment">Created a merging, decomposition and normalisation pipeline</li>
+							<li class="fragment">Further processed and ran outputs against testing tools for comparison</li>
 						</ol>
+					</section>
+					<section>
+						<p>DeepVariant Running and Comparison Pipeline</p>
+						<br>
+						<div class="ninety">
+							<img src="images/Step1.png">
+						</div>
+					</section>
+					<section>
+						<p>Comparison of called positions suggests a high false positive rate of Platypus (counts generated using vcf-tools)</p>
+						<div class="eighty">
+							<img src="venn1.png">
+						</div>
+					</section>
+					<section>
+						<p>However, DeepVariant's heterozygous calls were found to have a high Mendelian error rate</p>
+						<div class="eighty">
+							<img src="images/mendel_plat_compare.png">
+						</div>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>2. Testing DeepVariant on GIAB Truth Set</h2>
+					</section>
+					<section>
+						<p>Using the truth set would allow us to also measure 'correctness' of calls as well</p>
+						<ol>
+							<li>Ran DeepVariant on Genome in a Bottle Ashkenazim Trio sequence data</li>
+							<li class="fragment">Merging, decomposition and normalisation post-processing pipeline</li>	
+							<li class="fragment">Processing for Mendelian error test</li>
+						</ol>
+					</section>
+					<section>
+						<p>Better results than with the CHD data, but still significant Mendelian errors</p>
+						<div class="eighty">
+							<img src="images/mendel_dv_giab.png">
+						</div>
+						<p>Discrepancy is possibly explained by better quality & deeper reads on the GIAB genome sequencing data</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>3. Using FamSeq to correct Mendelian errors post-call</h2>
+					</section>
+					<section>
+						<h3>FamSeq</h3>
+						<p>Peng G, Fan Y, Wang W <b>FamSeq: A Variant Calling Program for Family-Based Sequencing Data Using Graphics Processing Units.</b> <i>PLOS Computational Biology</i> (2014)</p>
+					</section>
+					<section>
+						<p>FamSeq is a variant caller the incorporates the pedigree information of samples into its calling method</p>
+						<br>
+						<div class="eighty">
+							<img src="images/FamSeq_diagram.png">
+						</div>
+					</section>
+					<section>
+						<p>FamSeq utilises a Bayesian Network algorithm to determine a call.</p>
+						<br>
+						<ul>
+							<li class="fragment">The network is generated based on the pedigree information, and likelihoods are obtained from the PL column in the VCF file.</li>
+							<li class="fragment">These are then used to calculate posterior probabilities and to determine the call</li>
+						</ul>
+						<div class="eighty fragment">
+							<img src="images/bayesian_network_posterior.png">
+						</div>
+					</section>
+					<section>
+						<h3>Investigating FamSeq</h3>
+						<p>FamSeq thus could potentially improve on DeepVariant by improving these errors. To assess this:</p>
+						<ul>
+							<li>FamSeq is appended to the pipeline</li>
+							<li>Its output VCF is then transformed to a format to make testing and analysis possible</li>
+							<li>Both accuracy and mendelian errors are compared before and after FamSeq</li>
+						</ul>
+					</section>
+					<section>
+						<p>FamSeq Application + Analysis Pipeline</p>
+						<br>
+						<div class="ninety">
+							<img src="images/FamSeq_Analysis.png">
+						</div>
+					</section>
+					<section>
+						<p>Results: Mendelian Errors - CHD</p>
+						<div class="eighty fragment">
+							<img src="images/mendel_famseq_chd.png">
+						</div>
+					</section>
+					<section>
+						<p>Results: Mendelian Errors - GIAB</p>
+						<div class="eighty fragment">
+							<img src="images/mendel_famseq_giab.png">
+						</div>
+					</section>
+					<section>
+						<p>Results: Call Accuracy - GIAB</p>
+						<table>
+							<thead><tr>
+								<th>Call Type</th>
+								<th>Recall</th>
+								<th>Precision</th>
+								<th>F1</th>
+							</tr></thead>
+							<tbody><tr>
+								<td>Gijón</td>
+								<td>Siglo V a. C.</td>
+								<td>274290</td>
+							</tr>
+							<tr>
+								<td>Oviedo</td>
+								<td>761</td>
+								<td>221870</td>
+							</tr></tbody>
+						</table>
 					</section>
 				</section>
 				<section>
@@ -526,12 +637,17 @@
 	.image img{
 		/* max-height: -webkit-fill-available; */
 		max-height: 480px;
-		max-width: 800px;
+		max-width: 900px;
 	}
 	.eighty img{
 		/* max-height: -webkit-fill-available; */
 		max-height: 450px;
 		max-width: 800px;
+	}
+	.ninety img{
+		/* max-height: -webkit-fill-available; */
+		max-height: 550px;
+		max-width: 950px;
 	}
 	.small-image img{
 		/* max-height: -webkit-fill-available; */
